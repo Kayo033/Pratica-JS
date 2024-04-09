@@ -1,0 +1,174 @@
+/* 
+    (WIDTH) o W é "LARGO" então ele é Largura 
+    (HEIGHT) o H é "ALTO" então ele é Altura
+*/
+
+/* 
+    Pesquisar fontes no GOOGLE FONTS
+    Traz o import como abaixo, e coloca a font-family com o nome da font selecionada
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
+    /* DECLARAÇÃO DE VARIAVEIS (:ROOT) NO CSS ABAIXO ESCOPO GLOBAL (USA NO CSS TODO !) */
+
+:root {
+    --cor-primaria: #0F0E0E;
+    --cor-secundaria: #701616;
+    --cor-terciaria: #8B9A46;
+    --cor-hover: #dbcd0f;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+        /* 
+            O 'PADDING' é responsável por definir a distância entre um conteúdo e suas bordas.
+        */
+
+}
+
+body {
+        /*Usa 100% da VIEWPORT*/
+     height: 100vh; 
+        /* Por agora ter bastante conteúdo e a página estar passando o tamanho e começando a quebrar, tira o 100vh pq esta passando o tamanho da tela com o conteúdo */
+    min-width: 100vh;
+    box-sizing: border-box;
+    background-color: var(--cor-primaria); /*Usando variaveis no css VAR(NOME DA VARIAVEL)*/
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 80px;
+
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-primaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 482px;
+}
+
+
+.apresentacao__conteudo__titulo {
+        /*
+            1rem é igual à 16px... 2rem é igual à 32px e etc...
+
+            fazendo à conversão, ex: 36px dividido por 16 = 2.25rem
+        */
+    font-size:  2.25rem; 
+
+    font-family: 'Oswald', sans-serif;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links_subtitulo {
+    font-family: 'Krona One', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600px; /*Por ser botão, usa FONT-WEIGHT para aumentar o destaque das palavras*/
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+}
+
+    /*HOVER: quando passar o mouse acontece alguma coisa. EXEMPLOS ABAIXO...*/
+.apresentacao__links__link:hover { 
+    background-color: #272727;
+    color: var(--cor-hover);
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 20px; /*24px*/
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 2px 2px #F1EEE9;
+}
+
+    /* MEDIA QUERIES CSS */
+@media (max-width: 1500px){
+    .cabecalho {
+        padding: 10%;
+        align-items: center;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao{
+        /* Altera a ordem dos elementos */
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+}
